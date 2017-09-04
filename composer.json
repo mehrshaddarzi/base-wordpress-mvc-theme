@@ -1,0 +1,32 @@
+{
+    "name": "app/miraseparse",
+    "description": "mirasepars shop",
+    "authors": [
+        {
+            "name": "mehrshaddarzi",
+            "email": "mehrshad198@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "lib"
+    },
+    "require": {
+        "tareq1988/wp-eloquent": "dev-master",
+        "mike182uk/cart": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": ["app/"]
+        },
+        "files": [
+            "includes/ReduxCore/framework.php",
+            "includes/Tax-meta-class/Tax-meta-class.php",
+            "app/redux/option.php",
+            "includes/walker.php",
+            "includes/helper.php"
+        ]
+    },
+    "extra": {
+
+    }
+}
