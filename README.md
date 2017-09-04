@@ -1,5 +1,5 @@
 # base-wordpress-mvc-theme
 
-first Composer install
+1) Composer install
 
-second set setting in app folder
+2) Set setting in app/Config folder
