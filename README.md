@@ -1,4 +1,4 @@
-# Base Wordpress Theme Start + [ Admin Ui and Login Page Option ]
+# Base Wordpress Theme + [ AdminUi and LoginPage Option ]
 
 1) Composer install
 
