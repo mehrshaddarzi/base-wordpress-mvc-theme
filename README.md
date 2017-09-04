@@ -1,4 +1,4 @@
-# base-wordpress-mvc-theme
+# Base Wordpress Theme Start + [ Admin Ui and Login Page Option ]
 
 1) Composer install
 
