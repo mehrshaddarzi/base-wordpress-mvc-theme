@@ -11,8 +11,7 @@
         "vendor-dir": "lib"
     },
     "require": {
-        "tareq1988/wp-eloquent": "dev-master",
-        "mike182uk/cart": "3.*"
+        "tareq1988/wp-eloquent": "dev-master"
     },
     "autoload": {
         "psr-4": {
