@@ -348,6 +348,18 @@ li#wp-admin-bar-user-info {
     font-size: 14px;
 }
 
+/*Show time online*/
+span#show_time_online {
+    display: inline-block;
+    margin-top: 8px;
+    color: #FFF!important;
+    font-family: IRANSans-web !important;
+}
+span#timespan {
+    font-family: IRANSans-web !important;
+}
+
+
 /** Pace*/
 .pace {
     -webkit-pointer-events: none;
