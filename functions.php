@@ -11,7 +11,7 @@ require "lib/autoload.php";
 $provider = [
   
   
- 	//Databse
+ 	//Database
 	'db' => '\WeDevs\ORM\Eloquent\Database',
   
 	//Load Base class template
