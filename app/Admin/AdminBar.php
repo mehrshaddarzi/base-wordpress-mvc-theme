@@ -66,7 +66,7 @@ class AdminBar {
 	}
 	public function show_parsidate_top_bar(){
 		$t = '<script src="'.get_template_directory_uri().'/asset/admin/time.js"></script>';
-		$t .=  '<span id="show_time_online" style="display: inline-block;margin-top: 8px;color:#FFF!important">';
+		$t .=  '<span id="show_time_online">';
 		$t .=  parsidate("l j F ماه Y","now","per")." , ";
 		$t .=  '<span id="timespan"><script>show_time_online();</script></span>';
 		$t .=  '</span>';
