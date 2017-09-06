@@ -3,7 +3,16 @@ namespace App\Admin;
 
 class LoginPage {
 
+    public $color;
+
 	public function __construct() {
+        
+	    $this->color = [
+	            'base' => '#4fbd22',
+                'second' => '#63cc38',
+                'a' => '#389e10'
+        ];
+
 		add_filter('login_errors', array( $this, 'login_error_override'));
 		add_action( 'login_head', array( $this, 'hide_login_nav') );
 		add_action( 'login_enqueue_scripts', array( $this, 'themeslug_enqueue_script'), 1 );
@@ -51,7 +60,7 @@ class LoginPage {
 		?>
 		<style>
 			/*
-			* color scheme : #4fbd22
+			* color scheme : <?php echo $this->color['base']; ?>
 			*/
 			#login_error a {
 				display:none;
@@ -73,8 +82,8 @@ class LoginPage {
 				background: #ffffff;
 			}
 			.wp-core-ui .button-primary {
-				background: #4fbd22;
-				border-color: #4fbd22 !important;
+				background: <?php echo $this->color['base']; ?>;
+				border-color: <?php echo $this->color['base']; ?> !important;
 				-webkit-box-shadow: 0 0px 0 #006799;
 				box-shadow: none !important;
 				color: #fff;
@@ -82,8 +91,8 @@ class LoginPage {
 				text-shadow: none !important;
 			}
 			.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
-				background: #63cc38 !important;
-				border-color: #63cc38 !important;
+				background: <?php echo $this->color['second']; ?> !important;
+				border-color: <?php echo $this->color['second']; ?> !important;
 				color: #fff;
 			}
 			input[type=text], input[type=password] {
@@ -92,7 +101,7 @@ class LoginPage {
 				color: #696969 !important;
 			}
 			input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus {
-				border-color: #4fbd22 !important;
+				border-color: <?php echo $this->color['base']; ?> !important;
 				-webkit-box-shadow: none !important;
 				box-shadow: none !important;
 			}
@@ -119,7 +128,7 @@ class LoginPage {
 			}
 			a {
 				text-decoration:none;
-				color: #389e10;
+				color: <?php echo $this->color['a']; ?>;
 			}
 			input[name="wp-submit"] {
 				width: 100% !important;
@@ -149,7 +158,7 @@ class LoginPage {
 			.login label {direction:ltr; font-weight:100; }
 			input[type=checkbox]:checked:before {
 				margin: -3px 2px 0 0;
-				color: #4fbd22;
+				color: <?php echo $this->color['base']; ?>;
 			}
 			a:focus {
 				color: #124964;
