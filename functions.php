@@ -9,7 +9,11 @@ require "lib/autoload.php";
  * List Class Provider
  */
 $provider = [
-
+  
+  
+ 	//Databse
+	'db' => '\WeDevs\ORM\Eloquent\Database',
+  
 	//Load Base class template
 	'fornt_end_template' => '\App\Config\Front',
 	'hook_template' => '\App\Config\Hook',
@@ -41,6 +45,8 @@ $provider = [
 	'wp_single' => '\App\Wordpress\Single',
 	'wp_search' => '\App\Wordpress\Search',
 	'wp_comment' => '\App\Wordpress\Comment',
+  
+  
 ];
 
 /*
