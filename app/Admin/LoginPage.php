@@ -67,7 +67,7 @@ class LoginPage {
 			}
 			#login {
 				width: 320px;
-				padding: 9% 0 0;
+				padding: 3.5% 0 0;
 				margin: auto;
 			}
 			.login #nav {
