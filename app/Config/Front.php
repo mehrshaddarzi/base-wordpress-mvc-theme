@@ -6,7 +6,7 @@ class Front {
 	//Redux Framework Varible
 	private $wpdb;
 	public $redux;
-	const PATH = get_template_directory_uri() . '/asset/';
+	public $path;
 	const REDUX = "redux_option";
 	const COMPRESS_HTML = false;
 	const USE_SESSION = true;
@@ -16,6 +16,7 @@ class Front {
 
 		$this->redux = & $GLOBALS[self::REDUX];
 		$this->wpdb = & $GLOBALS['wpdb'];
+     	$this->path = get_template_directory_uri() . "/asset/";
 
 		if(self::COMPRESS_HTML ===true) add_action('init', array( $this, 'compress_html'));
 		if(self::USE_SESSION ===true) add_action('init', array( $this, 'init_sessions'));
@@ -77,7 +78,7 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 	function load_cdn_jquery(){
 		if (!is_admin()) {
 			wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', self::PATH.'js/jquery.min.js', true, 'latest-yolo' );
+			wp_register_script( 'jquery', $this->path.'js/jquery.min.js', true, 'latest-yolo' );
 			wp_enqueue_script( 'jquery' );
 		}
 
@@ -115,7 +116,7 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 		 */
       
       	//Css
-        wp_enqueue_style( 'bootstrap', self::PATH.'css/bootstrap.min.css' );
+        wp_enqueue_style( 'bootstrap', $this->path.'css/bootstrap.min.css' );
       
 
 		//Js
@@ -127,8 +128,8 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 
       /* Lightbox*/
         if (is_single() || is_page()) {
-            wp_enqueue_style('lightbox-style', self::PATH.'js/prettyphoto/css/prettyPhoto.css', 'style');
-            wp_enqueue_script('lightbox-js', self::PATH.'js/prettyphoto/js/jquery.prettyPhoto.js', array('jquery'), '', false);
+            wp_enqueue_style('lightbox-style', $this->path.'js/prettyphoto/css/prettyPhoto.css', 'style');
+            wp_enqueue_script('lightbox-js', $this->path.'js/prettyphoto/js/jquery.prettyPhoto.js', array('jquery'), '', false);
         }
       
       
