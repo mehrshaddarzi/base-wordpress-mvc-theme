@@ -41,8 +41,21 @@ class Hook {
 
 		add_action( 'wp_before_admin_bar_render', array( $this, 'remove_yoast_admin_bar_render') );
 		add_action('admin_head',  array( $this, 'remove_ltr_dunamic_widget'));
+      
+      	/*Pretty Photo*/
+        //add_filter('the_content', array( $this, 'prettyphoto_rel_replace') );
 
 	}
+  
+  	/*Pretty prettyphoto*/
+    public function prettyphoto_rel_replace ($content) {
+	    global $post;
+        $pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
+        $replacement = '<a$1href=$2$3.$4$5 rel="prettyPhoto[%LIGHTID%]"$6>';
+        $content = preg_replace($pattern, $replacement, $content);
+        $content = str_replace("%LIGHTID%", $post->ID, $content);
+        return $content;
+    }
 
 	public function twentyten_remove_recent_comments_style() {
 		global $wp_widget_factory;
