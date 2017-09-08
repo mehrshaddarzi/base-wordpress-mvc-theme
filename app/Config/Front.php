@@ -77,7 +77,7 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 	function load_cdn_jquery(){
 		if (!is_admin()) {
 			wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', 'https://code.jquery.com/jquery-latest.min.js', true, 'latest-yolo' );
+			wp_register_script( 'jquery', self::PATH.'js/jquery.min.js', true, 'latest-yolo' );
 			wp_enqueue_script( 'jquery' );
 		}
 
@@ -113,6 +113,10 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 		define('WP_SCSS_ALWAYS_RECOMPILE', true);
 
 		 */
+      
+      	//Css
+        wp_enqueue_style( 'bootstrap', self::PATH.'css/bootstrap.min.css' );
+      
 
 		//Js
 		wp_enqueue_script('class-js', get_template_directory_uri() . '/js/website.min.js', array('jquery'), '', false);
@@ -121,6 +125,13 @@ echo '<link rel="icon" type="image/png" href="'.$this->redux['gcb-icon-site']['u
 		wp_enqueue_script('Main-js', get_template_directory_uri() . '/js/market.min.js', array('jquery'), '', false);
 		wp_enqueue_script('Ticker-News', get_template_directory_uri() . '/js/ticker.js', array('jquery'), '', true);
 
+      /* Lightbox*/
+        if (is_single() || is_page()) {
+            wp_enqueue_style('lightbox-style', self::PATH.'js/prettyphoto/css/prettyPhoto.css', 'style');
+            wp_enqueue_script('lightbox-js', self::PATH.'js/prettyphoto/js/jquery.prettyPhoto.js', array('jquery'), '', false);
+        }
+      
+      
 		//localize Url Wp
 		wp_localize_script( 'Main-js', 'ajaxurl', home_url() );
 
