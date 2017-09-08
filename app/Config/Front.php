@@ -6,6 +6,7 @@ class Front {
 	//Redux Framework Varible
 	private $wpdb;
 	public $redux;
+	const PATH = get_template_directory_uri() . '/asset/';
 	const REDUX = "redux_option";
 	const COMPRESS_HTML = false;
 	const USE_SESSION = true;
