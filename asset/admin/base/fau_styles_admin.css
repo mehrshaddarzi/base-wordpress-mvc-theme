@@ -334,9 +334,10 @@ li#wp-admin-bar-user-info {
     padding: 10px 0px 5px 0;
 }
 .wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
-    top: 5px;
+    top: 0px;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: -2px;
+    border:0px;
 }
 .media-frame.mode-grid .media-toolbar select {
     font-size: 12px;
