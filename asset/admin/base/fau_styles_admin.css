@@ -360,6 +360,14 @@ span#timespan {
     font-family: IRANSans-web !important;
 }
 
+/* Row Actiorn list table */
+.row-actions {
+    font-size: 11px;
+}
+.row-actions, .row-actions-visible {
+    padding: 5px 0 0;
+}
+
 
 /** Pace*/
 .pace {
