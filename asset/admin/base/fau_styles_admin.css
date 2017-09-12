@@ -367,6 +367,13 @@ span#timespan {
 .row-actions, .row-actions-visible {
     padding: 5px 0 0;
 }
+.tablenav .tablenav-pages {
+    height: 38px;
+}
+.tablenav-pages .current-page {
+    width: 40px;
+    height: 30px;
+}
 
 
 /** Pace*/
