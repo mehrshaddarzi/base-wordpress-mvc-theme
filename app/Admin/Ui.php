@@ -255,13 +255,30 @@ class Ui {
 	          'options-discussion' => 'fa-cog',
 	          'options-media' => 'fa-cog',
 	          'options-permalink' => 'fa-cog',
+              
+              //Extra page
+               //'user_maharat' => 'fa-user'
+              
             ];
             foreach($array as $screen_id => $icon_wrap) {
+	            
+               //Extrapage
+                if (strlen(strstr($screen->id,'_page_')) >0) {
+                    if(strstr($screen->id,'_page_'.$screen_id)) {
+                        add_action('adminpage_icon', function() use ($screen_id, $array) {
+                            echo "fa {$array[$screen_id]}";
+                        });
+                    }
+                }
+
+                //base wordpress page
 	            if ($screen->id == $screen_id) {
 	                add_action('adminpage_icon', function() use ($screen_id, $array) {
                         echo "fa {$array[$screen_id]}";
 	                });
 	            }
+              
+           
             }
 	    }
     }
