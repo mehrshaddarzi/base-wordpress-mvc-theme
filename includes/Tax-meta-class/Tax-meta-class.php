@@ -180,6 +180,8 @@ class Tax_Meta_Class {
     // Make upload feature work event when custom post type doesn't support 'editor'
     wp_enqueue_script( 'jquery-ui-core' );
     wp_enqueue_script( 'jquery-ui-sortable' );
+    wp_enqueue_style( 'wp-color-picker' );
+      wp_enqueue_script( 'wp-color-picker' );
   }
   
   /**
@@ -701,9 +703,22 @@ class Tax_Meta_Class {
     $this->show_field_begin( $field, $meta );
     wp_enqueue_script('jquery-ui-sortable');
     wp_enqueue_media();
-    $std          = isset($field['std'])? $field['std'] : array('id' => '', 'url' => '');
-    $name         = esc_attr( $field['id'] );
-    $value        = isset($meta['id']) ? $meta : $std;
+    
+   $std = array('id' => '', 'url' => '');
+			if(is_array($field) and isset($field['std'])) {
+			    unset($std);
+				$std = $field['std'];
+            }
+			$name         = esc_attr( $field['id'] );
+			if(!isset($_GET['tag_ID'])) {
+				$value = array('id' => '', 'url' => '');
+            } else {
+				if(is_array($field) and isset($meta['id'])) {
+					unset($value);
+					$value = $meta;
+				}
+            }
+    
     //backwords capability
     if (!isset($value['url']))
     $value['url'] = '';
